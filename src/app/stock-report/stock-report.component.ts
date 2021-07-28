@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { StockReportService } from '../stock-report.service';
 import { UserService } from '../user.service';
+import {StockDeleteService} from '../stock-delete.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-stock-report',
@@ -11,8 +13,8 @@ import { UserService } from '../user.service';
 export class StockReportComponent implements OnInit {
 
   stock : Product [] = [];
-  displayedColumns: string[] = ["pid", "price", "category", "size", "color", "brand", "date_of_entry"];
-  constructor(private stockReportService : StockReportService,
+  displayedColumns: string[] = ["pid", "price", "category", "size", "color", "brand", "date_of_entry","delete"];
+  constructor(private stockReportService : StockReportService,private stockDeleteService : StockDeleteService,private _snackBar: MatSnackBar,
               public userService : UserService) { }
 
   ngOnInit(): void {
@@ -29,6 +31,25 @@ export class StockReportComponent implements OnInit {
 
   addDataToSock(){
     console.log("hello");
+  }
+  openSnackBar(message: string, action: string) {
+
+    this._snackBar.open(message, action,{
+      duration: 2000
+    });
+  }
+
+  deleteDataFromSock(product:Product){
+    console.log(product);
+    this.stockDeleteService.deleteItem(product).subscribe(
+      response => {
+        if(response){
+          this.openSnackBar("Product deleted successfully",'close');
+          this.loadData();
+        }
+
+      }
+    )
   }
 
 }
