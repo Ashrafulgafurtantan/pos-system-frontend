@@ -1,0 +1,20 @@
+mat-card {
+  background-color: #FFDADA;
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+  color: white;
+  font-size: medium;
+}
+
+mat-form-field {
+  display: block;
+}
+input{
+  color: black;
+  font-size: medium;
+}
+button{
+  color: white;
+  font-size: medium;
+}
