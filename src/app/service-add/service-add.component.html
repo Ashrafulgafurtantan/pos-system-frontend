@@ -28,3 +28,118 @@
 <div class="link">
     <a routerLink="/customer-service" routerLinkActive="active">Back</a>
 </div>
+
+
+<!--pid-->
+<!--price-->
+<!--category-->
+<!--size-->
+<!--color-->
+<!--brand-->
+
+
+<div class="center-screen">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="serviceForm" (ngSubmit)="addService()">
+        <h1>POS System Service</h1>
+          <h3>ADD NEW SERVICE.</h3>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="PID" formControlName="pid" required>
+          <mat-error>
+            Please provide a valid pid
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="number" placeholder="Price" formControlName="price" required>
+          <mat-error>
+            Please provide a valid price
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Category" formControlName="category" required>
+          <mat-error>
+            Please provide a valid category
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="number" placeholder="Size" formControlName="size" required>
+          <mat-error>
+            Please provide a valid size
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Color" formControlName="color" required>
+          <mat-error>
+            Please provide a valid color
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Brand" formControlName="brand" required>
+          <mat-error>
+            Please provide a valid brand
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Date Of Purchase" formControlName="date_of_purchase" required>
+          <mat-error>
+            Please provide a valid Date
+          </mat-error>
+        </mat-form-field>
+        <!--customer_name-->
+        <!--address-->
+        <!--phone-->
+        <!--service_date-->
+        <!--return_date-->
+        <!--service_charge-->
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Customer Name" formControlName="customer_name" required>
+          <mat-error>
+            Please provide a valid customer_name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Address" formControlName="address" required>
+          <mat-error>
+            Please provide a valid address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Phone" formControlName="phone" required>
+          <mat-error>
+            Please provide a valid phone
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Servide Date" formControlName="service_date" required>
+          <mat-error>
+            Please provide a valid service_date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Return Date" formControlName="return_date" required>
+          <mat-error>
+            Please provide a valid return_date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Service Charge" formControlName="service_charge" required>
+          <mat-error>
+            Please provide a valid service_charge
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button  style="width:55%;background-color: #2F5D62;" type="submit">ADD SERVICE</button>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>

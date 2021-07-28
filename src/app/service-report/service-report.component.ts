@@ -11,7 +11,21 @@ import { UserService } from '../user.service';
 export class ServiceReportComponent implements OnInit {
 
   services : Service [] = [];
-
+  displayedColumns: string[] = [
+    'pid',
+   'price',
+   'category',
+   'size',
+    'color',
+   'brand',
+   'date_of_purchase',
+   'customer_name',
+   'address',
+   'phone',
+  'service_date',
+   'return_date',
+   'service_charge',
+  ];
   constructor(private serviceReportService : ServiceReportService,
               public userService : UserService) { }
 

@@ -33,7 +33,6 @@ export class StockReportComponent implements OnInit {
     console.log("hello");
   }
   openSnackBar(message: string, action: string) {
-
     this._snackBar.open(message, action,{
       duration: 2000
     });

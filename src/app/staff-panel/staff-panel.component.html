@@ -1,19 +1,26 @@
-<h2>WELCOME TO STAFF PANEL</h2>
+<mat-card-title   style="color: darkslategray;text-align: center;padding: 20px;"><h1>WELCOME TO STAFF PANEL</h1></mat-card-title>
 
-<div class="link">
-    <a routerLink="/sales-add" routerLinkActive="active">NEW SALES</a>
-</div>
+<!--<div class="link">-->
+<!--    <a routerLink="/sales-add" routerLinkActive="active">NEW SALES</a>-->
+<!--</div>-->
 
-<div class="link">
-    <a routerLink="/customer-service" routerLinkActive="active">CUSTOMER SERVICE</a>
-</div>
+<!--<div class="link">-->
+<!--    <a routerLink="/customer-service" routerLinkActive="active">CUSTOMER SERVICE</a>-->
+<!--</div>-->
 
-<div class="link">
-    <a routerLink="/reports" routerLinkActive="active">REPORTS</a>
-</div>
+<!--<div class="link">-->
+<!--    <a routerLink="/reports" routerLinkActive="active">REPORTS</a>-->
+<!--</div>-->
 
-<div class="link">
-    <a routerLink="/profile" routerLinkActive="active">PROFILE</a>
-</div>
+<!--<div class="link">-->
+<!--    <a routerLink="/profile" routerLinkActive="active">PROFILE</a>-->
+<!--</div>-->
 
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="CUSTOMER SERVICE"><app-customer-service></app-customer-service></mat-tab>
+  <mat-tab label="NEW SALES"><app-sales-add></app-sales-add></mat-tab>
+  <mat-tab label="REPORTS"><app-report></app-report></mat-tab>
+  <mat-tab label="User Profile"><app-profile></app-profile></mat-tab>
+</mat-tab-group>

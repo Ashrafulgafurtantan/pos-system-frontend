@@ -1,24 +1,27 @@
-<h2>CUSTOMER SERVICE</h2>
+<!--<h2>CUSTOMER SERVICE</h2>-->
+<!--<div class="link">-->
+<!--    <a routerLink="/services-add" routerLinkActive="active">NEW SERVICE</a>-->
+<!--</div>-->
+<!--<div class="link">-->
+<!--    <a routerLink="/services-update" routerLinkActive="active">UPDATE SERVICE</a>-->
+<!--</div>-->
+<!--<div class="link">-->
+<!--    <a routerLink="/services-view" routerLinkActive="active">VIEW SERVICE</a>-->
+<!--</div>-->
+<!--<div class="link">-->
+<!--    <a *ngIf = "this.userService.isAdminUser()" routerLink="/admin-panel" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+<!--<div class="link">-->
+<!--    <a *ngIf = "this.userService.isStaffUser()" routerLink="/staff-panel" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+<!--<router-outlet></router-outlet>-->
 
-<div class="link">
-    <a routerLink="/services-add" routerLinkActive="active">NEW SERVICE</a>
+<div class="center-screen">
+  <mat-card>
+    <mat-card-content>
+      <button mat-raised-button routerLink="/services-add" style="color: whitesmoke;font-size: large;width:50%;background-color: #2F5D62" >NEW SERVICE</button>
+      <button mat-raised-button routerLink="/services-update" style="color: whitesmoke;font-size: large;width:50%;background-color: #2F5D62">UPDATE SERVICE</button>
+      <button mat-raised-button routerLink="/services-view" style="color: whitesmoke;font-size: large;width:50%;background-color: #2F5D62">VIEW SERVICE</button>
+    </mat-card-content>
+  </mat-card>
 </div>
-
-<div class="link">
-    <a routerLink="/services-update" routerLinkActive="active">UPDATE SERVICE</a>
-</div>
-
-<div class="link">
-    <a routerLink="/services-view" routerLinkActive="active">VIEW SERVICE</a>
-</div>
-
-<div class="link">
-    <a *ngIf = "this.userService.isAdminUser()" routerLink="/admin-panel" routerLinkActive="active">Back</a>
-</div>
-
-<div class="link">
-    <a *ngIf = "this.userService.isStaffUser()" routerLink="/staff-panel" routerLinkActive="active">Back</a>
-</div>
-
-
-<router-outlet></router-outlet>

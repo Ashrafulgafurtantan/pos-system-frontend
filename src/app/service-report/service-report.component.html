@@ -1,45 +1,106 @@
-<h2>SERVICE REPORT</h2>
+<!--<h2>SERVICE REPORT</h2>-->
 
-<div>
-    <table border="1" cellspacing= "0">
-        <tr>
-            <th>Product id</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Size</th>
-            <th>Color</th>
-            <th>Brand</th>
-            <th>Date of Purchase</th>
-            <th>Customer Name</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Service Date</th>
-            <th>Return Date</th>
-            <th>Service Charge</th>
-        </tr>
-        <tr *ngFor="let service of services">
-            <td>{{service.pid}}</td>
-            <td>{{service.price}}</td>
-            <td>{{service.category}}</td>
-            <td>{{service.size}}</td>
-            <td>{{service.color}}</td>
-            <td>{{service.brand}}</td>
-            <td>{{service.date_of_purchase}}</td>
-            <td>{{service.customer_name}}</td>
-            <td>{{service.address}}</td>
-            <td>{{service.phone}}</td>
-            <td>{{service.service_date}}</td>
-            <td>{{service.return_date}}</td>
-            <td>{{service.service_charge}}</td>
-        </tr>
-        
-    </table>
-</div>
+<!--<div>-->
+<!--    <table border="1" cellspacing= "0">-->
+<!--        <tr>-->
+<!--            <th>Product id</th>-->
+<!--            <th>Price</th>-->
+<!--            <th>Category</th>-->
+<!--            <th>Size</th>-->
+<!--            <th>Color</th>-->
+<!--            <th>Brand</th>-->
+<!--            <th>Date of Purchase</th>-->
+<!--            <th>Customer Name</th>-->
+<!--            <th>Address</th>-->
+<!--            <th>Phone</th>-->
+<!--            <th>Service Date</th>-->
+<!--            <th>Return Date</th>-->
+<!--            <th>Service Charge</th>-->
+<!--        </tr>-->
+<!--        <tr *ngFor="let service of services">-->
+<!--            <td>{{service.pid}}</td>-->
+<!--            <td>{{service.price}}</td>-->
+<!--            <td>{{service.category}}</td>-->
+<!--            <td>{{service.size}}</td>-->
+<!--            <td>{{service.color}}</td>-->
+<!--            <td>{{service.brand}}</td>-->
+<!--            <td>{{service.date_of_purchase}}</td>-->
+<!--            <td>{{service.customer_name}}</td>-->
+<!--            <td>{{service.address}}</td>-->
+<!--            <td>{{service.phone}}</td>-->
+<!--            <td>{{service.service_date}}</td>-->
+<!--            <td>{{service.return_date}}</td>-->
+<!--            <td>{{service.service_charge}}</td>-->
+<!--        </tr>-->
 
-<div class="link">
-    <a *ngIf = "this.userService.isAdminUser()" routerLink="/customer-service" routerLinkActive="active">Back</a>
-</div>
+<!--    </table>-->
+<!--</div>-->
 
-<div class="link">
-    <a *ngIf = "this.userService.isStaffUser()" routerLink="/reports" routerLinkActive="active">Back</a>
-</div>
+<!--<div class="link">-->
+<!--    <a *ngIf = "this.userService.isAdminUser()" routerLink="/customer-service" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+
+<!--<div class="link">-->
+<!--    <a *ngIf = "this.userService.isStaffUser()" routerLink="/reports" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+
+<table mat-table [dataSource]="services" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="pid">
+    <th mat-header-cell *matHeaderCellDef> <b>PID.</b> </th>
+    <td mat-cell *matCellDef="let element"> {{element.pid}} </td>
+  </ng-container>
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> <b>Price.</b> </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container>
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef> <b>Category.</b> </th>
+    <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+  </ng-container>
+  <ng-container matColumnDef="size">
+    <th mat-header-cell *matHeaderCellDef> <b>Size.</b> </th>
+    <td mat-cell *matCellDef="let element"> {{element.size}} </td>
+  </ng-container>
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> <b>Color.</b> </th>
+    <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+  </ng-container>
+  <ng-container matColumnDef="brand">
+    <th mat-header-cell *matHeaderCellDef> <b>Brand.</b> </th>
+    <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date_of_purchase">
+    <th mat-header-cell *matHeaderCellDef><b> Date Of Purchase. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.date_of_purchase}} </td>
+  </ng-container>
+  <ng-container matColumnDef="customer_name">
+    <th mat-header-cell *matHeaderCellDef><b>Customer Name. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.customer_name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef><b> Address. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef><b> Phone. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+  </ng-container>
+  <ng-container matColumnDef="service_date">
+    <th mat-header-cell *matHeaderCellDef><b> Service Date. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.service_date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="return_date">
+    <th mat-header-cell *matHeaderCellDef><b> Return Date. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.return_date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="service_charge">
+    <th mat-header-cell *matHeaderCellDef><b> Service Charge. </b></th>
+    <td mat-cell *matCellDef="let element"> {{element.service_charge}} </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
