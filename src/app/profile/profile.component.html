@@ -1,0 +1,35 @@
+<!--<br><br>-->
+<!--<b>Username : </b> {{currentUser.username}} <br>-->
+<!--<b>Password : </b> {{currentUser.password}} <br>-->
+<!--<b>Role : </b> {{currentUser.role}} <br><br>-->
+
+<!--<div class="link">-->
+<!--    <a *ngIf = "this.userService.isAdminUser()" routerLink="/admin-panel" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+
+<!--<div class="link">-->
+<!--    <a *ngIf = "this.userService.isStaffUser()" routerLink="/staff-panel" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+
+  <mat-card class="container">
+    <mat-card-content>
+      <img  src="https://ps.w.org/simple-user-avatar/assets/icon-256x256.png?rev=2413146" align="center" alt="Avatar" class="avatar">
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" style="color: white;font-size: large;width: 300px;" placeholder="Username" value="{{currentUser.username}}" >
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <input matInput type="password" style="color: white;font-size: large;width: 300px;" placeholder="Username" value="{{currentUser.password}}" >
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <input matInput type="text" style="color: white;font-size: large;width: 300px;" placeholder="Username" value="{{currentUser.role}}" >
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+

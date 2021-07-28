@@ -1,0 +1,24 @@
+<h2>CUSTOMER SERVICE</h2>
+
+<div class="link">
+    <a routerLink="/services-add" routerLinkActive="active">NEW SERVICE</a>
+</div>
+
+<div class="link">
+    <a routerLink="/services-update" routerLinkActive="active">UPDATE SERVICE</a>
+</div>
+
+<div class="link">
+    <a routerLink="/services-view" routerLinkActive="active">VIEW SERVICE</a>
+</div>
+
+<div class="link">
+    <a *ngIf = "this.userService.isAdminUser()" routerLink="/admin-panel" routerLinkActive="active">Back</a>
+</div>
+
+<div class="link">
+    <a *ngIf = "this.userService.isStaffUser()" routerLink="/staff-panel" routerLinkActive="active">Back</a>
+</div>
+
+
+<router-outlet></router-outlet>

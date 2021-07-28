@@ -1,0 +1,30 @@
+<h2>NEW CUSTOMER SERVICE</h2>
+
+<div>
+    <form>
+        Search By PID : <input type="text" [(ngModel)] = "pid" name = "pid" required><br>
+        <button (click) = "searchSale()">Search</button>
+    </form>
+
+    <form>
+        Product id : <input type="text" [(ngModel)] = "sale.pid" value = "sale.pid" name="pid" readonly/> <br>
+        Price : <input type="number" [(ngModel)] = "sale.price" value = "sale.price" name="price" readonly/> <br>
+        Category : <input type="text" [(ngModel)] = "sale.category" value = "sale.category" name="category" readonly/> <br>
+        Size : <input type="number" [(ngModel)] = "sale.size" value = "sale.size" name="size" readonly/> <br>
+        Color : <input type="text" [(ngModel)] = "sale.color" value = "sale.color" name="color" readonly/> <br>
+        Brand : <input type="text" [(ngModel)] = "sale.brand" value = "sale.brand" name="brand" readonly/> <br>
+        Date of Purchase : <input type="text" [(ngModel)] = "sale.date_of_purchase" value = "sale.date_of_purchase" name="date" readonly/> <br>
+        Customer Name : <input type="text" [(ngModel)] = "service.customer_name" name="customer_name" required/> <br>
+        Address : <input type="text" [(ngModel)] = "service.address" name="address" required/> <br>
+        Phone : <input type="text" [(ngModel)] = "service.phone" name="phone" required/> <br>
+        Service Date : <input type="text" [(ngModel)] = "service.service_date" name="service_date" required/> <br>
+        Return Date : <input type="text" [(ngModel)] = "service.return_date" name="return_date" required/> <br>
+        Service Charge : <input type="number" [(ngModel)] = "service.service_charge" name="service_charge" required/> <br>
+        <button (click) = "addService()">Add</button>
+    </form>
+
+</div>
+
+<div class="link">
+    <a routerLink="/customer-service" routerLinkActive="active">Back</a>
+</div>

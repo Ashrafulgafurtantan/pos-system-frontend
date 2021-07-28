@@ -1,0 +1,23 @@
+<h2>NEW SALES</h2>
+
+<div>
+    <form>
+        Search By PID : <input type="text" [(ngModel)] = "pid" name = "pid" required><br>
+        <button (click) = "searchItem ()">Search</button>
+    </form>
+    
+    <form>
+        Product id : <input type="text" [(ngModel)] = "product.pid" value = "product.pid" name="pid" readonly/> <br>
+        Price : <input type="number" [(ngModel)] = "product.price" value = "product.price" name="price" readonly/> <br>
+        Category : <input type="text" [(ngModel)] = "product.category" value = "product.category" name="category" readonly/> <br>
+        Size : <input type="number" [(ngModel)] = "product.size" value = "product.size" name="size" readonly/> <br>
+        Color : <input type="text" [(ngModel)] = "product.color" value = "product.color" name="color" readonly/> <br>
+        Brand : <input type="text" [(ngModel)] = "product.brand" value = "product.brand" name="brand" readonly/> <br>
+        Date of Purchase : <input type="text" [(ngModel)] = "sale.date_of_purchase" value = "sale.date_of_purchase" name="date" readonly/> <br>
+        <button (click) = "addSale()">Purchase</button>
+    </form>
+</div>
+
+<div class="link">
+    <a routerLink="/staff-panel" routerLinkActive="active">Back</a>
+</div>

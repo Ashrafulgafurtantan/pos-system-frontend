@@ -1,0 +1,85 @@
+<!--<h2>ADD YOUR NEW ITEM</h2>-->
+
+<!--<div>-->
+<!--    <form>-->
+<!--        Product id : <input type="text" [(ngModel)] = "product.pid" name="pid" required/> <br>-->
+<!--        Price : <input type="number" [(ngModel)] = "product.price" name="price" required/> <br>-->
+<!--        Category : <input type="text" [(ngModel)] = "product.category" name="category" required/> <br>-->
+<!--        Size : <input type="number" [(ngModel)] = "product.size" name="size" required/> <br>-->
+<!--        Color : <input type="text" [(ngModel)] = "product.color" name="color" required/> <br>-->
+<!--        Brand : <input type="text" [(ngModel)] = "product.brand" name="brand" required/> <br>-->
+<!--        Date of Entry : <input type="text" [(ngModel)] = "product.date_of_entry" name="date" required/> <br>-->
+<!--        <button (click) = "addItem()">Add Item</button>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--<div class="link">-->
+<!--    <a routerLink="/manage-stock" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+
+<!--<router-outlet></router-outlet>-->
+
+<div class="center-screen">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="productForm" (ngSubmit)="addItem()">
+        <h1>POS System Products</h1>
+        <h3>ADD NEW PRODUCTS.</h3>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="PID" formControlName="pid" required>
+          <mat-error>
+            Please provide a valid pid
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="number" placeholder="Price" formControlName="price" required>
+          <mat-error>
+            Please provide a valid price
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Category" formControlName="category" required>
+          <mat-error>
+            Please provide a valid category
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="number" placeholder="Size" formControlName="size" required>
+          <mat-error>
+            Please provide a valid size
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Color" formControlName="color" required>
+          <mat-error>
+            Please provide a valid color
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Brand" formControlName="brand" required>
+          <mat-error>
+            Please provide a valid brand
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Date Of Entry" formControlName="date_of_entry" required>
+          <mat-error>
+            Please provide a valid Entry Date
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button  style="width:100%;background-color: #F38BA0;" type="submit">ADD PRODUCT</button>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>

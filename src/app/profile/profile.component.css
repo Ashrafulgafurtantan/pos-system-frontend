@@ -1,0 +1,28 @@
+
+
+mat-card {
+  background-color: #93D9A3;
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+  color: white;
+  font-size: medium;
+}
+
+mat-form-field {
+  display: block;
+}
+input{
+  color: white;
+  font-size: medium;
+}
+button{
+  color: white;
+  font-size: medium;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  align-items: center;
+}

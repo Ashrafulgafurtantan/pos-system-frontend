@@ -1,0 +1,20 @@
+table {
+  background-color: #CEE5D0;
+  width: 80%;
+  margin: 2em auto;
+
+}
+div{
+  width: 80%;
+  margin: 2em auto;
+
+}
+th{
+  color: #1a3b29;
+  font-size: large;
+}
+td{
+
+  color: #2F5D62;
+  font-size: medium;
+}

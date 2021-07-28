@@ -1,0 +1,14 @@
+
+<mat-toolbar class="mat-elevation-z6">
+    <span>
+        POS System
+    </span>
+
+  <div class="spacer"></div>
+
+  <a mat-button routerLink="starting-page" *ngIf="notLoggedIn">Home</a>
+  <a mat-raised-button color="accent" routerLink="login" *ngIf="notLoggedIn">Log in</a>
+  <a mat-button *ngIf="loggedIn" routerLink="starting-page"><mat-icon>account_circle</mat-icon>{{userName}}</a>
+
+  <a mat-raised-button color="gray" *ngIf="loggedIn" (click)="sign_out()">Log Out</a>
+</mat-toolbar>

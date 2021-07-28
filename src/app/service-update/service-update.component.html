@@ -1,0 +1,29 @@
+<h2>UPDATE CUSTOMER SERVICE</h2>
+
+<div>
+    <form>
+        Search By PID : <input type="text" [(ngModel)] = "pid" name = "pid" required><br>
+        <button (click) = "searchService ()">Search</button>
+    </form>
+
+    <form>
+        Product id : <input type="text" [(ngModel)] = "service.pid" value = "service.pid" name="pid" readonly/> <br>
+        Price : <input type="text" [(ngModel)] = "service.price" value = "service.price" name="price" readonly/> <br>
+        Category : <input type="text" [(ngModel)] = "service.category" value = "service.category" name="category" readonly/> <br>
+        Size : <input type="text" [(ngModel)] = "service.size" value = "service.size" name="size" readonly/> <br>
+        Color : <input type="text" [(ngModel)] = "service.color" value = "service.color" name="color" readonly/> <br>
+        Brand : <input type="text" [(ngModel)] = "service.brand" value = "service.brand" name="brand" readonly/> <br>
+        Date of Purchase : <input type="text" [(ngModel)] = "service.date_of_purchase" value = "service.date_of_purchase" name="date_of_purchase" readonly/> <br>
+        Customer Name : <input type="text" [(ngModel)] = "service.customer_name" value = "service.customer_name" name="customer_name" readonly/> <br>
+        Address : <input type="text" [(ngModel)] = "service.address" value = "service.address" name="address" readonly/> <br>
+        Phone : <input type="text" [(ngModel)] = "service.phone" value = "service.phone" name="phone" required/> <br>
+        Service Date : <input type="text" [(ngModel)] = "service.service_date" value = "service.service_date" name="service_date" readonly/> <br>
+        Return Date : <input type="text" [(ngModel)] = "service.return_date" value = "service.return_date" name="return_date" required/> <br>
+        Service Charge : <input type="text" [(ngModel)] = "service.service_charge" value = "service.service_charge" name="service_charge" readonly/> <br>
+        <button (click) ="updateService()">Update</button>
+    </form>
+</div>
+
+<div class="link">
+    <a routerLink="/customer-service" routerLinkActive="active">Back</a>
+</div>
