@@ -63,12 +63,36 @@
         </mat-form-field>
 
 
+<!--        <mat-form-field appearance="fill">-->
+<!--          <input matInput type="text" placeholder="Brand" formControlName="brand" required>-->
+<!--          <mat-error>-->
+<!--            Please provide a valid brand-->
+<!--          </mat-error>-->
+<!--        </mat-form-field>-->
+
+
         <mat-form-field appearance="fill">
-          <input matInput type="text" placeholder="Brand" formControlName="brand" required>
+          <mat-label>Brand</mat-label>
+          <mat-select formControlName="brand" required>
+            <mat-option value="Aarong">Aarong</mat-option>
+            <mat-option value="Richman"> Richman</mat-option>
+            <mat-option value="Cats Eye"> Cats Eye</mat-option>
+            <mat-option value="Yellow"> Yellow</mat-option>
+            <mat-option value="Ecstasy"> Ecstasy</mat-option>
+            <mat-option value="Freeland"> Freeland</mat-option>
+            <mat-option value="Dorjibari"> Dorjibari</mat-option>
+            <mat-option value="Bata"> Bata</mat-option>
+            <mat-option value="Apex"> Apex</mat-option>
+            <mat-option value="Le Reve"> Le Reve</mat-option>
+            <mat-option value="Kay Kraft"> Kay Kraft</mat-option>
+            <mat-option value="Anjan's"> Anjan's</mat-option>
+          </mat-select>
           <mat-error>
-            Please provide a valid brand
+            Please select an option
           </mat-error>
         </mat-form-field>
+
+
 
         <mat-form-field appearance="fill">
           <input matInput type="text" placeholder="Date Of Entry" formControlName="date_of_entry" required>
