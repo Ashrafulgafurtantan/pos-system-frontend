@@ -3,6 +3,7 @@ import { Product } from '../models/product';
 import { StockAddService } from '../stock-add.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-stock-add',
@@ -12,7 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class StockAddComponent implements OnInit {
   productForm: FormGroup;
   product : Product = new Product();
-  constructor(private stockAddService : StockAddService,private _snackBar: MatSnackBar) {
+  constructor(private router : Router,private stockAddService : StockAddService,private _snackBar: MatSnackBar) {
     this.initializeForm();
   }
 
@@ -45,10 +46,12 @@ export class StockAddComponent implements OnInit {
       response => {
         if(response == true){
           this.openSnackBar("Item added successfully",'close')
+          this.router.navigate(["starting-page"], );
         }else{
           this.openSnackBar("Product id already exists",'close');
         }
         this.product = new Product();
+
       }
     );
   }

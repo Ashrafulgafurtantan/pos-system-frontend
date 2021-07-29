@@ -1,29 +1,126 @@
-<h2>UPDATE CUSTOMER SERVICE</h2>
+<!--<h2>UPDATE CUSTOMER SERVICE</h2>-->
 
-<div>
-    <form>
-        Search By PID : <input type="text" [(ngModel)] = "pid" name = "pid" required><br>
-        <button (click) = "searchService ()">Search</button>
-    </form>
+<!--<div>-->
+<!--    <form>-->
+<!--        Search By PID : <input type="text" [(ngModel)] = "pid" name = "pid" required><br>-->
+<!--        <button (click) = "searchService ()">Search</button>-->
+<!--    </form>-->
 
-    <form>
-        Product id : <input type="text" [(ngModel)] = "service.pid" value = "service.pid" name="pid" readonly/> <br>
-        Price : <input type="text" [(ngModel)] = "service.price" value = "service.price" name="price" readonly/> <br>
-        Category : <input type="text" [(ngModel)] = "service.category" value = "service.category" name="category" readonly/> <br>
-        Size : <input type="text" [(ngModel)] = "service.size" value = "service.size" name="size" readonly/> <br>
-        Color : <input type="text" [(ngModel)] = "service.color" value = "service.color" name="color" readonly/> <br>
-        Brand : <input type="text" [(ngModel)] = "service.brand" value = "service.brand" name="brand" readonly/> <br>
-        Date of Purchase : <input type="text" [(ngModel)] = "service.date_of_purchase" value = "service.date_of_purchase" name="date_of_purchase" readonly/> <br>
-        Customer Name : <input type="text" [(ngModel)] = "service.customer_name" value = "service.customer_name" name="customer_name" readonly/> <br>
-        Address : <input type="text" [(ngModel)] = "service.address" value = "service.address" name="address" readonly/> <br>
-        Phone : <input type="text" [(ngModel)] = "service.phone" value = "service.phone" name="phone" required/> <br>
-        Service Date : <input type="text" [(ngModel)] = "service.service_date" value = "service.service_date" name="service_date" readonly/> <br>
-        Return Date : <input type="text" [(ngModel)] = "service.return_date" value = "service.return_date" name="return_date" required/> <br>
-        Service Charge : <input type="text" [(ngModel)] = "service.service_charge" value = "service.service_charge" name="service_charge" readonly/> <br>
-        <button (click) ="updateService()">Update</button>
-    </form>
-</div>
+<!--    <form>-->
+<!--        Product id : <input type="text" [(ngModel)] = "service.pid" value = "service.pid" name="pid" readonly/> <br>-->
+<!--        Price : <input type="text" [(ngModel)] = "service.price" value = "service.price" name="price" readonly/> <br>-->
+<!--        Category : <input type="text" [(ngModel)] = "service.category" value = "service.category" name="category" readonly/> <br>-->
+<!--        Size : <input type="text" [(ngModel)] = "service.size" value = "service.size" name="size" readonly/> <br>-->
+<!--        Color : <input type="text" [(ngModel)] = "service.color" value = "service.color" name="color" readonly/> <br>-->
+<!--        Brand : <input type="text" [(ngModel)] = "service.brand" value = "service.brand" name="brand" readonly/> <br>-->
+<!--        Date of Purchase : <input type="text" [(ngModel)] = "service.date_of_purchase" value = "service.date_of_purchase" name="date_of_purchase" readonly/> <br>-->
+<!--        Customer Name : <input type="text" [(ngModel)] = "service.customer_name" value = "service.customer_name" name="customer_name" readonly/> <br>-->
+<!--        Address : <input type="text" [(ngModel)] = "service.address" value = "service.address" name="address" readonly/> <br>-->
+<!--        Phone : <input type="text" [(ngModel)] = "service.phone" value = "service.phone" name="phone" required/> <br>-->
+<!--        Service Date : <input type="text" [(ngModel)] = "service.service_date" value = "service.service_date" name="service_date" readonly/> <br>-->
+<!--        Return Date : <input type="text" [(ngModel)] = "service.return_date" value = "service.return_date" name="return_date" required/> <br>-->
+<!--        Service Charge : <input type="text" [(ngModel)] = "service.service_charge" value = "service.service_charge" name="service_charge" readonly/> <br>-->
+<!--        <button (click) ="updateService()">Update</button>-->
+<!--    </form>-->
+<!--</div>-->
 
-<div class="link">
-    <a routerLink="/customer-service" routerLinkActive="active">Back</a>
+<!--<div class="link">-->
+<!--    <a routerLink="/customer-service" routerLinkActive="active">Back</a>-->
+<!--</div>-->
+
+<div class="center-screen" style="margin-bottom: 60px;">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="serviceForm" (ngSubmit)="updateService()">
+        <h1>POS System Service</h1>
+        <h3>UPDATE SERVICE.</h3>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="PID" formControlName="pid" required>
+          <mat-error>
+            Please provide a valid pid
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="number" placeholder="Price" formControlName="price" required>
+          <mat-error>
+            Please provide a valid price
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Category" formControlName="category" required>
+          <mat-error>
+            Please provide a valid category
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="number" placeholder="Size" formControlName="size" required>
+          <mat-error>
+            Please provide a valid size
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Color" formControlName="color" required>
+          <mat-error>
+            Please provide a valid color
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Brand" formControlName="brand" required>
+          <mat-error>
+            Please provide a valid brand
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Date Of Purchase" formControlName="date_of_purchase" required>
+          <mat-error>
+            Please provide a valid Date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Customer Name" formControlName="customer_name" required>
+          <mat-error>
+            Please provide a valid customer_name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Address" formControlName="address" required>
+          <mat-error>
+            Please provide a valid address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Phone" formControlName="phone" required>
+          <mat-error>
+            Please provide a valid phone
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Servide Date" formControlName="service_date" required>
+          <mat-error>
+            Please provide a valid service_date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Return Date" formControlName="return_date" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" placeholder="Service Charge" formControlName="service_charge" required>
+          <mat-error>
+            Please provide a valid service_charge
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button  style="width:55%;background-color: #2F5D62;" type="submit">UPDATE</button>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
 </div>

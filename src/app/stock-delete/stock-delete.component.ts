@@ -4,6 +4,7 @@ import { StockDeleteService } from '../stock-delete.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {StockUpdateService} from '../stock-update.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-stock-delete',
@@ -16,7 +17,7 @@ export class StockDeleteComponent implements OnInit {
   product : Product = new Product();
   productForm: FormGroup;
   searchForm: FormGroup;
-  constructor(private stockDeleteService : StockDeleteService,private _snackBar: MatSnackBar) {
+  constructor(private stockDeleteService : StockDeleteService,private router:Router,private _snackBar: MatSnackBar) {
     this.initializeForm();
   }
 
@@ -63,14 +64,19 @@ export class StockDeleteComponent implements OnInit {
 
   deleteItem () : void {
     this.product = this.productForm.value;
-    this.stockDeleteService.deleteItem(this.product).subscribe(
-      response => {
-        if(response)
-          this.openSnackBar("Product deleted successfully",'close');
+    const  current_user = JSON.parse(localStorage.getItem('currentUser'));
+    if(current_user.role.toUpperCase() == 'ADMIN' ){
+      this.stockDeleteService.deleteItem(this.product).subscribe(
+        response => {
+          if(response){
+            this.openSnackBar("Product deleted successfully",'close');
+            this.router.navigate(["starting-page"], );
+          }
+          this.product = new Product();
+        }
+      )
+    }
 
-        this.product = new Product();
-      }
-    )
   }
   searchItem () : void {
     let temp = this.searchForm.value;

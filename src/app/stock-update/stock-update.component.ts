@@ -3,6 +3,7 @@ import { Product } from '../models/product';
 import { StockUpdateService } from '../stock-update.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-stock-update',
@@ -16,7 +17,7 @@ export class StockUpdateComponent implements OnInit {
   searchForm: FormGroup;
   product : Product = new Product();
 
-  constructor(private stockUpdateService : StockUpdateService,private _snackBar: MatSnackBar) {
+  constructor(private stockUpdateService : StockUpdateService,private router:Router,private _snackBar: MatSnackBar) {
 this.initializeForm();
   }
 
@@ -61,8 +62,11 @@ this.initializeForm();
     this.product = this.productForm.value;
     this.stockUpdateService.updateItem(this.product).subscribe(
       response => {
-        if(response)
+        if(response){
           this.openSnackBar("Product updated successfully",'close')
+          this.router.navigate(["starting-page"], );
+        }
+
         this.product = new Product();
         this.pid=null;
       }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Service } from '../models/service';
 import { ServiceReportService } from '../service-report.service';
 import { UserService } from '../user.service';
@@ -26,11 +27,16 @@ export class ServiceReportComponent implements OnInit {
    'return_date',
    'service_charge',
   ];
-  constructor(private serviceReportService : ServiceReportService,
+  constructor(private serviceReportService : ServiceReportService,private router:Router,
               public userService : UserService) { }
 
   ngOnInit(): void {
     this.getReport();
+  }
+  onDoubleClick(element:Service){
+    console.log(element);
+    localStorage.setItem("updateReport",JSON.stringify(element));
+    this.router.navigate(["services-update"], );
   }
 
   getReport() : void {

@@ -23,7 +23,7 @@
 <!--</div>-->
 
 <div class="center-screen">
-  <mat-card>
+  <mat-card id="search-btn">
     <mat-card-content>
       <form [formGroup]="searchForm" (ngSubmit)="searchItem()">
         <h3>Search By PID.</h3>
@@ -37,9 +37,54 @@
       </form>
     </mat-card-content>
   </mat-card>
-  <mat-card>
+<!--  new Content-->
+
+  <table *ngIf="showSaleTable" mat-table [dataSource]="temp" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="pid">
+      <th mat-header-cell *matHeaderCellDef> <b>PID.</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.pid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> <b>Price.</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> <b>Category.</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    </ng-container>
+    <ng-container matColumnDef="size">
+      <th mat-header-cell *matHeaderCellDef> <b>Size.</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.size}} </td>
+    </ng-container>
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef> <b>Color.</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+    </ng-container>
+    <ng-container matColumnDef="brand">
+      <th mat-header-cell *matHeaderCellDef> <b>Brand.</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+    </ng-container>
+    <ng-container matColumnDef="date_of_purchase">
+      <th mat-header-cell *matHeaderCellDef><b> Date Of Selling. </b></th>
+      <td mat-cell *matCellDef="let element"> {{element.date_of_purchase}} </td>
+    </ng-container>
+    <ng-container matColumnDef="sold">
+      <th mat-header-cell *matHeaderCellDef><b> Sell Product </b></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button style="background-color: #2F5D62;color:white;"
+                (click)="addSale(element)"
+                color="accent">Sell</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!--
+   <mat-card>
     <mat-card-content>
-      <form [formGroup]="saleForm" (ngSubmit)="addSale()">
+      <form [formGroup]="saleForm" >
         <h1>POS System Sales</h1>
         <h3>ADD NEW SALES.</h3>
         <mat-form-field appearance="fill">
@@ -95,6 +140,113 @@
         </mat-form-field>
 
         <button mat-raised-button  style="width:100%;background-color: #F38BA0;" type="submit">ADD SALE</button>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+
+
+  -->
+</div>
+
+
+<div *ngIf="showServiceForm" class="center-screen">
+  <mat-card id="service-form" style="background-color: #CEE5D0;
+  max-width: 65%;
+  margin: 2em auto;
+  text-align: center;
+  color: white;
+  font-size: medium;">
+    <mat-card-content>
+      <form [formGroup]="serviceForm" (ngSubmit)="addService()">
+        <h1>POS System Service</h1>
+        <h3>ADD NEW SERVICE.</h3>
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="PID" formControlName="pid" required>
+          <mat-error>
+            Please provide a valid pid
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="number" placeholder="Price" formControlName="price" required>
+          <mat-error>
+            Please provide a valid price
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Category" formControlName="category" required>
+          <mat-error>
+            Please provide a valid category
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="number" placeholder="Size" formControlName="size" required>
+          <mat-error>
+            Please provide a valid size
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Color" formControlName="color" required>
+          <mat-error>
+            Please provide a valid color
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Brand" formControlName="brand" required>
+          <mat-error>
+            Please provide a valid brand
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Date Of Purchase" formControlName="date_of_purchase" required>
+          <mat-error>
+            Please provide a valid Date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Customer Name" formControlName="customer_name" required>
+          <mat-error>
+            Please provide a valid customer_name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Address" formControlName="address" required>
+          <mat-error>
+            Please provide a valid address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Phone" formControlName="phone" required>
+          <mat-error>
+            Please provide a valid phone
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Servide Date" formControlName="service_date" required>
+          <mat-error>
+            Please provide a valid service_date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Return Date" formControlName="return_date" required>
+        </mat-form-field>
+        <mat-form-field style=" width: 47%;padding: 5px 5px;" appearance="fill">
+          <input matInput type="text" placeholder="Service Charge" formControlName="service_charge" required>
+          <mat-error>
+            Please provide a valid service_charge
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button  style="width:55%;background-color: #2F5D62;" type="submit">ADD SERVICE</button>
       </form>
     </mat-card-content>
 

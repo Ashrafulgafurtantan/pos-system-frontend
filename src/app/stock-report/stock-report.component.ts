@@ -13,6 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class StockReportComponent implements OnInit {
 
   stock : Product [] = [];
+
   displayedColumns: string[] = ["pid", "price", "category", "size", "color", "brand", "date_of_entry","delete"];
   constructor(private stockReportService : StockReportService,private stockDeleteService : StockDeleteService,private _snackBar: MatSnackBar,
               public userService : UserService) { }
@@ -39,16 +40,21 @@ export class StockReportComponent implements OnInit {
   }
 
   deleteDataFromSock(product:Product){
-    console.log(product);
-    this.stockDeleteService.deleteItem(product).subscribe(
-      response => {
-        if(response){
-          this.openSnackBar("Product deleted successfully",'close');
-          this.loadData();
-        }
+    const  current_user = JSON.parse(localStorage.getItem('currentUser'));
+    if(current_user.role.toUpperCase() == 'ADMIN' ){
+      this.stockDeleteService.deleteItem(product).subscribe(
+        response => {
+          if(response){
+            this.openSnackBar("Product deleted successfully",'close');
+            this.loadData();
+          }
 
-      }
-    )
+        }
+      )
+    }else{
+      this.openSnackBar("You Don't Have Permission To Delete",'close');
+    }
+
   }
 
 }
