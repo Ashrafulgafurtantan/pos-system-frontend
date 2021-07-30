@@ -29,6 +29,12 @@ export class RegisterComponent implements OnInit {
       role: new FormControl('', Validators.required),
     });
   }
+  openSnackBar(message: string, action: string) {
+
+    this._snackBar.open(message, action,{
+      duration: 2000
+    });
+  }
   addUser() : void {
     this.user = this.registerForm.value;
     this.userService.registerUser(this.user).subscribe (
@@ -45,11 +51,6 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
-  openSnackBar(message: string, action: string) {
 
-    this._snackBar.open(message, action,{
-      duration: 2000
-    });
-  }
 
 }
