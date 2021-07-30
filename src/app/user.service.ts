@@ -18,29 +18,6 @@ export class UserService {
   constructor(private http : HttpClient) {
     this.isLoggedIn = false;
    }
-
-  isUserLoggedIn() : boolean {
-    return this.isLoggedIn;
-
-  }
-
-  // public login (user : User) : Observable<boolean> {
-  //   //this.isLoggedIn=true;
-  //   //return of(this.isLoggedIn);
-  //    this.http.post<boolean>(this.url + "login",user).subscribe(response=>{
-  //     this.isLoggedIn=response;
-  //     if(this.isLoggedIn) {
-  //       this.searchUser(user.username).subscribe(
-  //         response1 => {
-  //           console.log("response1 = ",response1);
-  //           this.currentUser = response1;
-  //          // localStorage.setItem('current_user',this.currentUser);
-  //       })
-  //     }
-  //
-  //   });
-  //  return this.http.post<boolean>(this.url + "login",user);
-  // }
   onLogin(user: User): Observable<boolean>{
     const tempUrl = this.url + 'login';
     return  this.http.post<boolean>(tempUrl,user);
@@ -55,21 +32,12 @@ export class UserService {
     const params = new HttpParams().set("username",username);
    return   this.http.get<User>(this.url+"search",{params});
   }
-  public isAdminUser() : boolean {
-    //
-    //return false;
 
-    return false;
-   // return this.currentUser.role.toUpperCase()=="ADMIN";
+  public updateStaff(user: User) : Observable<User> {
+    const tempUrl ='http://localhost:5001/api/admin/update_staff';
+    return   this.http.post<User>(tempUrl,user);
   }
 
-  public isStaffUser() : boolean {
-    //return true;
-    //return false;
-
-    return true;
-    //return this.currentUser.role.toUpperCase()=="STAFF";
-  }
 
   public getCurrentUser() : User {
     return this.currentUser;

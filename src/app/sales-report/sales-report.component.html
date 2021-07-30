@@ -1,36 +1,4 @@
-<!--<h2>SALES REPORT</h2>-->
 
-<!--<div>-->
-<!--    <table border="1" cellspacing= "0">-->
-<!--        <tr>-->
-<!--            <th>Product id</th>-->
-<!--            <th>Price</th>-->
-<!--            <th>Category</th>-->
-<!--            <th>Size</th>-->
-<!--            <th>Color</th>-->
-<!--            <th>Brand</th>-->
-<!--            <th>Date of Purchase</th>-->
-<!--        </tr>-->
-<!--        <tr *ngFor="let product of sales">-->
-<!--            <td>{{product.pid}}</td>-->
-<!--            <td>{{product.price}}</td>-->
-<!--            <td>{{product.category}}</td>-->
-<!--            <td>{{product.size}}</td>-->
-<!--            <td>{{product.color}}</td>-->
-<!--            <td>{{product.brand}}</td>-->
-<!--            <td>{{product.date_of_purchase}}</td>-->
-<!--        </tr>-->
-
-<!--    </table>-->
-<!--</div>-->
-
-<!--<div class="link">-->
-<!--    <a *ngIf = "this.userService.isAdminUser()" routerLink="/admin-panel" routerLinkActive="active">Back</a>-->
-<!--</div>-->
-
-<!--<div class="link">-->
-<!--    <a *ngIf = "this.userService.isStaffUser()" routerLink="/reports" routerLinkActive="active">Back</a>-->
-<!--</div>-->
 
 <table mat-table [dataSource]="sales" class="mat-elevation-z8">
 
